@@ -41,4 +41,6 @@ docker-prod-build:
 docker-prod-push:
 	docker push harbor.longguikeji.com/ark-releases/jenkins-config:$(VERSION)
 
+docker-test-update:
+	echo "test update"
 include "./devops/Makefile"
