@@ -24,3 +24,4 @@ RUN echo $META > meta.txt \
     && npm run build
 
 # custom start(自定义内容标志行，不可删除)
+RUN echo "hello"
