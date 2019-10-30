@@ -17,11 +17,6 @@ FROM build_deps AS run_test
 COPY . .
 RUN make test
 
-FROM build_deps AS build
-COPY . .
-ARG META
-RUN echo $META > meta.txt \
-    && npm run build
 
 # custom start(自定义内容标志行，不可删除)
 RUN echo "hello"
