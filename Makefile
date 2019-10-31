@@ -38,7 +38,7 @@ docker-prod: docker-prod-build docker-prod-push
 docker-prod-build:
 	docker build -t  harbor.longguikeji.com/ark-releases/jenkins-config:$(VERSION) .
 
-docker-prod-push:
+docker-prod-push-abc:
 	docker push harbor.longguikeji.com/ark-releases/jenkins-config:$(VERSION)
 
 include "./devops/Makefile"
