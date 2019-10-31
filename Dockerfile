@@ -23,7 +23,7 @@ RUN make test
 
 FROM build_deps as build
 
-RUN pip install uwsgi
+RUN pip install uafwsgi
 ADD . .
 COPY uwsgi.ini /etc/uwsgi/uwsgi.ini
 CMD python manage.py migrate && supervisord
