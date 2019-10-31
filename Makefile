@@ -12,7 +12,7 @@ ci:
 	-t harbor.longguikeji.com/ark-releases/jenkins-config:$(VERSION) .
 
 test:
-	npm run test:unit
+	python manage.py migrate && python manage.py test siteapi.v1.tests
 
 lint:
 	@if [ ${BASE_COMMIT_ID}x != ""x ]; \
@@ -21,7 +21,7 @@ lint:
 		git add .; \
 	fi
 
-	npx lint-staged
+	.git/hooks/pre-commit
 
 build: docker-dev-build
 
@@ -41,6 +41,4 @@ docker-prod-build:
 docker-prod-push:
 	docker push harbor.longguikeji.com/ark-releases/jenkins-config:$(VERSION)
 
-docker-test-update:
-	echo "test update"
 include "./devops/Makefile"
