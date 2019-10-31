@@ -29,3 +29,4 @@ COPY uwsgi.ini /etc/uwsgi/uwsgi.ini
 CMD python manage.py migrate && supervisord
 
 # custom start(自定义内容标志行与下面空行，不可删除)
+RUN make test
